@@ -110,6 +110,7 @@ class BaseModel(object):
             dev: dataset
 
         """
+
         best_score = 0
         nepoch_no_imprv = 0 # for early stopping
         self.add_summary() # tensorboard

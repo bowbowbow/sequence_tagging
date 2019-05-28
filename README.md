@@ -115,3 +115,57 @@ train_filename = "data/coNLL/eng/eng.train.iob"
 
 This project is licensed under the terms of the apache 2.0 license (as Tensorflow and derivatives). If used for research, citation would be appreciated.
 
+## Performance 
+
+### use_crf = True, use_chars = True
+             precision    recall  f1-score   support
+
+      B-MISC       0.00      0.00      0.00         4
+       I-LOC       0.95      0.96      0.96      2094
+      I-MISC       0.89      0.89      0.89      1264
+       I-ORG       0.95      0.88      0.91      2092
+       I-PER       0.97      0.98      0.97      3149
+           O       0.99      1.00      1.00     42759
+
+   micro avg       0.99      0.99      0.99     51362
+   macro avg       0.79      0.78      0.79     51362
+weighted avg       0.99      0.99      0.99     51362
+
+acc 98.75 - f1 92.77
+
+### use_crf = False, use_chars = False
+Epoch 7 out of 100
+703/703 [==============================] - 86s - train loss: 0.0784     
+              precision    recall  f1-score   support
+
+      B-MISC       0.00      0.00      0.00         4
+       I-LOC       0.92      0.94      0.93      2094
+      I-MISC       0.93      0.75      0.83      1264
+       I-ORG       0.93      0.76      0.84      2092
+       I-PER       0.97      0.96      0.97      3149
+           O       0.98      1.00      0.99     42759
+
+   micro avg       0.98      0.98      0.98     51362
+   macro avg       0.79      0.74      0.76     51362
+weighted avg       0.98      0.98      0.98     51362
+
+f1 87.91 - acc 97.60
+
+### use_crf = False, use_chars = False, padding_mask = False
+
+Epoch 7 out of 100
+703/703 [==============================] - 93s - train loss: 0.0823      
+              precision    recall  f1-score   support
+
+      B-MISC       0.00      0.00      0.00         4
+       I-LOC       0.92      0.94      0.93      2094
+      I-MISC       0.93      0.74      0.83      1264
+       I-ORG       0.93      0.75      0.83      2092
+       I-PER       0.97      0.96      0.97      3149
+           O       0.98      1.00      0.99     42759
+
+   micro avg       0.98      0.98      0.98     51362
+   macro avg       0.79      0.73      0.76     51362
+weighted avg       0.97      0.98      0.97     51362
+
+acc 97.52 - f1 87.63

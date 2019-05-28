@@ -24,7 +24,7 @@ def main():
     processing_word = get_processing_word(lowercase=True)
 
     # Generators
-    dev   = CoNLLDataset(config.filename_dev, processing_word)
+    dev   = CoNLLDatwaset(config.filename_dev, processing_word)
     test  = CoNLLDataset(config.filename_test, processing_word)
     train = CoNLLDataset(config.filename_train, processing_word)
 
